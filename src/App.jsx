@@ -1,0 +1,27 @@
+import LogoIcon from "./components/Logo";
+import Navbar from "./components/Navbar";
+import Contact from "./section/Contact";
+import Experience from "./section/Experience";
+import FeatureCards from "./section/FeatureCards";
+import Footer from "./section/Footer";
+import Hero from "./section/Hero";
+import Showcase from "./section/Showcase";
+import TechStack from "./section/TechStack";
+
+const App = () => {
+  return (
+    <>
+      <Navbar />
+      <Hero />
+      <Showcase />
+      <LogoIcon />
+      <FeatureCards />
+      <TechStack />
+      <Experience />
+      <Contact/>
+      <Footer/>
+    </>
+  );
+};
+
+export default App;
