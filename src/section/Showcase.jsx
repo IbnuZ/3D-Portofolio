@@ -44,7 +44,7 @@ const Showcase = () => {
   }, []);
 
   return (
-    <div id="work" ref={sectionRef} className="app-showcase">
+    <div id="work" ref={sectionRef} className="app-showcase md:my-20 my-10">
       <div className="w-full">
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">

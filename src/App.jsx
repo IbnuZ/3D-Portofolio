@@ -1,4 +1,4 @@
-import LogoIcon from "./components/Logo";
+import Loader from "./components/Loader";
 import Navbar from "./components/Navbar";
 import Contact from "./section/Contact";
 import Experience from "./section/Experience";
@@ -11,15 +11,15 @@ import TechStack from "./section/TechStack";
 const App = () => {
   return (
     <>
+      <Loader /> 
       <Navbar />
-      <Hero />
+      <Hero />          
       <Showcase />
-      <LogoIcon />
       <FeatureCards />
       <TechStack />
       <Experience />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </>
   );
 };

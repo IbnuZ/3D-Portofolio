@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import TitleHeader from "../components/TitleHeader";
-import  ContactExperience  from "../components/Models/Contact/ContactExperience";
+import ContactExperience from "../components/Models/Contact/ContactExperience";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
@@ -41,7 +41,10 @@ const Contact = () => {
   return (
     <section id="contact" className="flex-center section-padding">
       <div className="w-full h-full md:px-10 px-5">
-        <TitleHeader title="Get In Touch With Me" sub="Contact Information" />
+        <TitleHeader
+          title="Get in Touch – Let’s Connect"
+          sub="💬 Have questions or ideas? Let’s talk! 🚀"
+        />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
             <div className="flex-center card-border rounded-xl p-10">
@@ -95,7 +98,7 @@ const Contact = () => {
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
                     </p>
-                    <div className="arrow-wrapper">
+                    <div className="arrow-wrapper right-4">
                       <img src="/images/arrow-down.svg" alt="arrow" />
                     </div>
                   </div>

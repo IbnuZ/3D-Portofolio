@@ -70,6 +70,7 @@ const Hero = () => {
         {/* RIGHT: Hero Content */}
         <figure>
           <div className="hero-3d-layout border-red-200">
+    
             <HeroExperience />
           </div>
         </figure>

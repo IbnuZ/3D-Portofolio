@@ -176,7 +176,7 @@ const expCards = [
     review:
       "Ibnu consistently delivered high-quality React components that elevated our product’s performance and user experience.",
     title: "React Developer",
-    imgPath: "/images/expi.png",
+    imgPath: "/images/exp.png",
     logoPath: "/images/logo3.png",
     date: "March 2019 - May 2020",
     responsibilities: [
