@@ -8,7 +8,7 @@ const Loader = () => {
 
   useEffect(() => {
     if (progress === 100) {
-      const timeout = setTimeout(() => setIsDone(true), 500); // kasih transisi smooth
+      const timeout = setTimeout(() => setIsDone(true), 500);
       return () => clearTimeout(timeout);
     }
   }, [progress]);
