@@ -47,7 +47,7 @@ const Contact = () => {
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl p-10">
+            <div className="flex-center card-border rounded-xl px-5">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
@@ -94,11 +94,11 @@ const Contact = () => {
 
                 <button type="submit">
                   <div className="cta-button group">
-                    <div className="bg-circle" />
+                    <div className="bg-circle"/>
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
                     </p>
-                    <div className="arrow-wrapper right-4">
+                    <div className="arrow-wrapper">
                       <img src="/images/arrow-down.svg" alt="arrow" />
                     </div>
                   </div>
