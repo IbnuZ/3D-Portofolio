@@ -64,7 +64,7 @@ const Hero = () => {
 
         {/* RIGHT: 3D Model or Visual */}
         <figure>
-          <div className="hero-3d-layout mt-30 md:mt-0">
+          <div className="hero-3d-layout">
             <HeroExperience />
           </div>
         </figure>
