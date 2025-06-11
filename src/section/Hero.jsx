@@ -10,15 +10,10 @@ const Hero = () => {
     gsap.fromTo(
       ".hero-text h1",
       { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        stagger: 1.5,
-        duration: 5,
-        ease: "power2.inOut",
-      }
+      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
     );
   });
+
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
@@ -50,31 +45,31 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>Crafting Interactive Experiences</h1>
-              <h1>One Line of Code at a Time</h1>
+              <h1>into Real Projects</h1>
+              <h1>that Deliver Results</h1>
             </div>
 
-            <p>
-              Hi, I'm Ibnu — a passionate developer from Indonesia crafting web
-              and mobile experiences.
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Hi, I’m Ibnu, a developer based in Indnesia with a passion for
+              code.
             </p>
 
             <Button
               text="See My Work"
               className="md:w-80 md:h-16 w-60 h-12"
-              id="button"
+              id="counter"
             />
           </div>
         </header>
 
-        {/* RIGHT: Hero Content */}
+        {/* RIGHT: 3D Model or Visual */}
         <figure>
-          <div className="hero-3d-layout border-red-200">
-    
+          <div className="hero-3d-layout mt-30 md:mt-0">
             <HeroExperience />
           </div>
         </figure>
       </div>
+
       <AnimatedCounter />
     </section>
   );
