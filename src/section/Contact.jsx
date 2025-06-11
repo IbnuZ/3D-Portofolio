@@ -40,7 +40,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="flex-center section-padding">
-      <div className="w-full h-full md:px-10 px-5">
+      <div className="w-full h-full ">
         <TitleHeader
           title="Get in Touch – Let’s Connect"
           sub="💬 Have questions or ideas? Let’s talk! 🚀"
@@ -93,7 +93,7 @@ const Contact = () => {
                 </div>
 
                 <button type="submit">
-                  <div className="cta-button group md:w-80 md:h-16 w-60 h-12">
+                  <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
                       {loading ? "Sending..." : "Send Message"}
