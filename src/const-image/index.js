@@ -73,17 +73,17 @@ const logoIconsList = [
 
 const abilities = [
   {
-    imgPath: "/images/seo.png",
+    imgPath: "/images/seo.webp",
     title: "Quality Focus",
     desc: "Delivering high-quality results while maintaining attention to every detail.",
   },
   {
-    imgPath: "/images/chat.png",
+    imgPath: "/images/chat.webp",
     title: "Reliable Communication",
     desc: "Keeping you updated at every step to ensure transparency and clarity.",
   },
   {
-    imgPath: "/images/time.png",
+    imgPath: "/images/time.webp",
     title: "On-Time Delivery",
     desc: "Making sure projects are completed on schedule, with quality & attention to detail.",
   },
@@ -149,8 +149,8 @@ const expCards = [
   {
     review:
       "Ibnu's contributions to our web apps have been outstanding. His experience with both frontend and backend frameworks allowed him to work seamlessly across the stack.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
+    imgPath: "/images/exp1.webp",
+    logoPath: "/images/logo1.webp",
     title: "Full Stack Developer",
     date: "January 2024 - Present",
     responsibilities: [
@@ -162,8 +162,8 @@ const expCards = [
   {
     review:
       "Ibnu’s creative approach to building mobile apps using Flutter enhanced our product’s mobile experience significantly, improving speed and responsiveness.",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    imgPath: "/images/exp2.webp",
+    logoPath: "/images/logo2.webp",
     title: "Flutter Developer",
     date: "Juny 2024 - December 2024",
     responsibilities: [
@@ -176,8 +176,8 @@ const expCards = [
     review:
       "Ibnu consistently delivered high-quality React components that elevated our product’s performance and user experience.",
     title: "React Developer",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    imgPath: "/images/exp3.webp",
+    logoPath: "/images/logo3.webp",
     date: "January 2023 - May 2024",
     responsibilities: [
       "Developed dynamic and responsive user interfaces using React.js.",
@@ -190,15 +190,15 @@ const expCards = [
 const expLogos = [
   {
     name: "logo1",
-    imgPath: "/images/logo1.png",
+    imgPath: "/images/logo1.webp",
   },
   {
     name: "logo2",
-    imgPath: "/images/logo2.png",
+    imgPath: "/images/logo2.webp",
   },
   {
     name: "logo3",
-    imgPath: "/images/logo3.png",
+    imgPath: "/images/logo3.webp",
   },
 ];
 
@@ -250,22 +250,22 @@ const testimonials = [
 const socialImgs = [
   {
     name: "insta",
-    imgPath: "/images/insta.png",
+    imgPath: "/images/insta.webp",
     url: "https://www.instagram.com/ibnunsrllh_/",
   },
   {
     name: "fb",
-    imgPath: "/images/fb.png",
+    imgPath: "/images/fb.webp",
     url: "https://www.facebook.com/ibnu.ibnu.835636",
   },
   {
     name: "github",
-    imgPath: "/images/github.png",
+    imgPath: "/images/github.webp",
     url: "https://github.com/IbnuZ",
   },
   {
     name: "linkedin",
-    imgPath: "/images/linkedin.png",
+    imgPath: "/images/linkedin.webp",
     url: "https://www.linkedin.com/in/ibnu-nasrulloh/",
   },
 ];

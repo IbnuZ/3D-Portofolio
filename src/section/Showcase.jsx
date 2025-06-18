@@ -49,7 +49,7 @@ const Showcase = () => {
         <div className="showcaselayout">
           <div ref={rydeRef} className="first-project-wrapper">
             <div className="image-wrapper">
-              <img src="/images/project1.jpeg" alt="Internship Management Platform" />
+              <img src="/images/project1.webp" alt="Internship Management Platform" />
             </div>
             <div className="text-content">
               <h2>
@@ -66,7 +66,7 @@ const Showcase = () => {
             <div className="project" ref={libraryRef}>
               <div className="image-wrapper bg-[#FFEFDB]">
                 <img
-                  src="/images/project2.jpeg"
+                  src="/images/project2.webp"
                   alt="Restaurant Management Platform"
                 />
               </div>
@@ -75,7 +75,7 @@ const Showcase = () => {
 
             <div className="project" ref={ycDirectoryRef}>
               <div className="image-wrapper bg-[#e0f1e0]">
-                <img src="/images/project3.jpeg" alt="YC Directory App" />
+                <img src="/images/project3.webp" alt="YC Directory App" />
               </div>
               <h2>Festival Music App</h2>
             </div>
