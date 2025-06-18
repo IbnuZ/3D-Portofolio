@@ -19,7 +19,7 @@ const App = () => {
     }); 
 
     return () => clearTimeout(timeout);
-  }, []);
+  }, []); 
 
   if (loading) {
     return <Loader />; // hanya tampilkan loader
