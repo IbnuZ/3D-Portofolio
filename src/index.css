@@ -366,15 +366,15 @@ section {
 /* Hero Text slider ends */
 
 .gradient-line {
-  width: 2px;
+  width: 4px;
   background: linear-gradient(
     to top,
-    #0d47a1 0%,       /* biru navy */
-    #1565c0 20%,      /* biru tua */
-    #81d4fa 40%,      /* biru muda */
-    #b0bec5 60%,      /* abu kebiruan */
-    #e0e0e0 80%,      /* abu terang */
-    rgba(255, 255, 255, 0) 100% /* transparan */
+    #0d47a1 0%,
+    #1565c0 20%,
+    #81d4fa 40%,
+    #b0bec5 60%,
+    #e0e0e0 80%,
+    rgba(255, 255, 255, 0) 100%
   );
 }
 
