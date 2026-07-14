@@ -37,29 +37,23 @@ const Experience = () => {
       });
     });
 
-    // from the top of the timeline to 70% down the screen
-    // The timeline height should scale down from 1 to 0
-    // as the user scrolls up the screen
-    gsap.to(".timeline", {
-      // Set the origin of the animation to the bottom of the timeline
-      transformOrigin: "bottom bottom",
-      // Animate the timeline height over 1 second
-      ease: "power1.inOut",
-      // Trigger the animation when the timeline is at the top of the screen
-      // and end it when the timeline is at 70% down the screen
-      scrollTrigger: {
-        trigger: ".timeline",
-        start: "top center",
-        end: "70% center",
-        // Update the animation as the user scrolls
-        onUpdate: (self) => {
-          // Scale the timeline height as the user scrolls
-          // from 1 to 0 as the user scrolls up the screen
-          gsap.to(".timeline", {
-            scaleY: 1 - self.progress,
-          });
-        },
-      },
+    // Animate each timeline line smoothly as the user scrolls.
+    gsap.utils.toArray(".timeline").forEach((line) => {
+      gsap.fromTo(
+        line,
+        { scaleY: 1 },
+        {
+          scaleY: 0,
+          transformOrigin: "bottom center",
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: line,
+            start: "top center",
+            end: "70% center",
+            scrub: true,
+          },
+        }
+      );
     });
 
     // Loop through each expText element and animate them in
@@ -115,12 +109,11 @@ const Experience = () => {
                   <div className="flex items-start">
                     <div className="timeline-wrapper">
                       <div className="timeline" />
-                      <div className="gradient-line w-1 h-full" />
-                    </div>
-                    <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
                       <div className="timeline-logo">
                         <img src={card.logoPath} alt="logo" />
                       </div>
+                    </div>
+                    <div className="expText flex-1 relative z-20">
                       <div>
                         <h1 className="font-semibold text-3xl">{card.title}</h1>
                         <p className="my-5 text-white-50">
