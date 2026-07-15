@@ -1,24 +1,36 @@
+import { lazy, Suspense, useEffect, useState } from "react";
 import Navbar from "./section/Navbar";
-import Contact from "./section/Contact";
-import Experience from "./section/Experience";
-import FeatureCards from "./section/FeatureCards";
-import Footer from "./section/Footer";
-import Hero from "./section/Hero";
-import Showcase from "./section/Showcase";
-import TechStack from "./section/TechStack";
+import Loader from "./components/Loader";
+
+const Hero = lazy(() => import("./section/Hero"));
+const Showcase = lazy(() => import("./section/Showcase"));
+const FeatureCards = lazy(() => import("./section/FeatureCards"));
+const TechStack = lazy(() => import("./section/TechStack"));
+const Experience = lazy(() => import("./section/Experience"));
+const Contact = lazy(() => import("./section/Contact"));
+const Footer = lazy(() => import("./section/Footer"));
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => setIsLoading(false), 800);
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <>
+      {isLoading ? <Loader /> : null}
       <Navbar />
-      <Hero />
-      <Showcase />
-      <FeatureCards />
-      <TechStack />
-      <Experience />
-      <Contact />
-      <Footer />
+      <Suspense fallback={<div className="min-h-screen bg-black" />}> 
+        <Hero />
+        <Showcase />
+        <FeatureCards />
+        <TechStack />
+        <Experience />
+        <Contact />
+        <Footer />
+      </Suspense>
     </>
   );
 };
