@@ -1,7 +1,7 @@
 import { Environment, Float, OrbitControls, useGLTF } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { useEffect } from "react";
 import * as THREE from "three";
+import SmartCanvas from '../../SmartCanvas';
 
 const TechIcon = ({ model }) => {
   const scene = useGLTF(model.modelPath);
@@ -15,7 +15,7 @@ const TechIcon = ({ model }) => {
     }
   });
   return (
-    <Canvas>
+    <SmartCanvas>
       <ambientLight intensity={0.3} />
       <directionalLight position={[5, 5, 5]} intensity={1} />
       <Environment preset="city" />
@@ -25,7 +25,7 @@ const TechIcon = ({ model }) => {
           <primitive object={scene.scene} />
         </group>
       </Float>
-    </Canvas>
+    </SmartCanvas>
   );
 };
 

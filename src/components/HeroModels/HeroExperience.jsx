@@ -1,10 +1,10 @@
 import React, { Suspense, useEffect, useState } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { Canvas } from "@react-three/fiber";
 import { useMediaQuery } from "react-responsive";
 import { Room } from "./Room";
 import HeroLights from "./HeroLights";
 import Particles from "./Particles";
+import SmartCanvas from '../SmartCanvas';
 
 const HeroExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
@@ -21,7 +21,7 @@ const HeroExperience = () => {
   }
 
   return (
-    <Canvas
+    <SmartCanvas
       camera={{ position: [0, 0, 15], fov: 45 }}
       dpr={[1, 1.5]}
       gl={{ antialias: false, powerPreference: "low-power" }}
@@ -47,7 +47,7 @@ const HeroExperience = () => {
           <Room />
         </group>
       </Suspense>
-    </Canvas>
+    </SmartCanvas>
   );
 };
 
