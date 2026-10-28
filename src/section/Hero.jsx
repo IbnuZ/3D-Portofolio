@@ -3,7 +3,7 @@ import { words } from "../const-image";
 import Button from "../components/Button";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import AnimatedCounter from "../components/AnimatedCounter";
+// import AnimatedCounter from "../components/AnimatedCounter";
 
 const HeroExperience = lazy(() => import("../components/HeroModels/HeroExperience"));
 
@@ -70,7 +70,7 @@ const Hero = () => {
         </figure>
       </div>
 
-      <AnimatedCounter />
+        {/* <AnimatedCounter /> */}
     </section>
   );
 };

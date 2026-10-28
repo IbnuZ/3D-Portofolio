@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import ThemeToggle from "../components/ThemeToggle";
 import { navLinks } from "../const-image";
 
 const Navbar = () => {
@@ -8,7 +8,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-    
       const isScrolled = window.scrollY > 10;
       setScrolled(isScrolled);
     };
@@ -40,6 +39,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
+        <ThemeToggle />
         <a href="#contact" className="contact-btn group">
           <div className="inner">
             <span>Contact me</span>
@@ -48,6 +48,6 @@ const Navbar = () => {
       </div>
     </header>
   );
-}
+};
 
 export default Navbar;
