@@ -5,17 +5,17 @@ export default function ThemeToggle() {
 
   return (
     <button
+      type="button"
       onClick={toggleTheme}
       aria-label="Toggle Theme"
-      className="flex items-center gap-2 px-3.5 py-2 rounded-full border transition-all duration-300 shadow-sm
-        bg-white/80 border-slate-200 text-slate-800 hover:bg-slate-100
-        dark:bg-slate-900/80 dark:border-slate-700 dark:text-slate-100 dark:hover:bg-slate-800 backdrop-blur-md"
+      title={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      className="theme-toggle"
     >
       {isDark ? (
         <>
           {/* Ikon Matahari (Untuk beralih ke Mode Terang) */}
           <svg
-            className="w-5 h-5 text-amber-400 animate-spin-slow"
+            className="w-5 h-5 text-amber-400"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"

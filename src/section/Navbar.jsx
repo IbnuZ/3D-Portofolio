@@ -39,12 +39,15 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <ThemeToggle />
-        <a href="#contact" className="contact-btn group">
-          <div className="inner">
-            <span>Contact me</span>
-          </div>
-        </a>
+        {/* Kelompokkan tombol di kanan agar jaraknya rapi */}
+        <div className="actions">
+          <ThemeToggle />
+          <a href="#contact" className="contact-btn group">
+            <div className="inner">
+              <span>Contact me</span>
+            </div>
+          </a>
+        </div>
       </div>
     </header>
   );

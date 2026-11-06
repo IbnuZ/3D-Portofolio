@@ -1,8 +1,10 @@
 import { useRef, useMemo } from "react";
 import { useFrame } from "@react-three/fiber";
+import { useTheme } from "../../context/ThemeContext";
 
 const Particles = ({ count = 200 }) => {
   const mesh = useRef();
+  const { isDark } = useTheme();
 
   const particles = useMemo(() => {
     const temp = [];
@@ -48,7 +50,7 @@ const Particles = ({ count = 200 }) => {
         />
       </bufferGeometry>
       <pointsMaterial
-        color="#ffffff"
+        color={isDark ? "#ffffff" : "#6366f1"}
         size={0.05}
         transparent
         opacity={0.9}

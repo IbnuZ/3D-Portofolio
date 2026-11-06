@@ -19,20 +19,21 @@
    ========================================================= */
 html.light {
   --gradient: radial-gradient(circle, #38bdf8 0%, #6366f1 100%);
-  --bg-primary: #f8fafc;           /* Soft Slate Alabaster (tidak menyilaukan mata) */
-  --text-primary: #0f172a;         /* Deep Slate untuk teks utama */
-  --nav-scrolled-bg: rgba(248, 250, 252, 0.85);
-  --edge-fade: rgba(248, 250, 252, 1);
-  --tech-hover-bg: #e0f2fe;        /* Soft Sky Blue saat tech card di-hover */
-  --card-glow-color: #3b82f6;
+  --bg-primary: #f5f7fb;           /* Off-white kebiruan, lembut di mata */
+  --text-primary: #1e293b;         /* Slate 800 – tidak sekeras hitam pekat */
+  --nav-scrolled-bg: rgba(245, 247, 251, 0.8);
+  --edge-fade: rgba(245, 247, 251, 1);
+  --tech-hover-bg: #eef4ff;        /* Indigo sangat muda saat tech card di-hover */
+  --card-glow-color: #6366f1;
+  --accent: #4f46e5;               /* Aksen utama mode terang (indigo) */
 
   /* Override variabel @theme agar semua class bg-black-100, text-white-50, dll otomatis berubah! */
-  --color-white-50: #334155;       /* Teks sekunder menjadi abu-abu gelap elegan */
-  --color-black-50: #cbd5e1;       /* Border kartu menjadi abu-abu terang */
-  --color-black-100: #ffffff;      /* Background kartu menjadi putih bersih */
-  --color-black-200: #e2e8f0;      /* Badge & CTA button menjadi soft gray */
-  --color-blue-50: #64748b;        /* Placeholder form */
-  --color-blue-100: #f1f5f9;       /* Background input form */
+  --color-white-50: #526077;       /* Teks sekunder: slate kebiruan, kontras cukup tapi lembut */
+  --color-black-50: #e3e8f0;       /* Border kartu tipis */
+  --color-black-100: #ffffff;      /* Background kartu putih */
+  --color-black-200: #eef2f8;      /* Badge & CTA button */
+  --color-blue-50: #94a3b8;        /* Placeholder form */
+  --color-blue-100: #f8fafc;       /* Background input form */
 }
 
 html,
@@ -112,11 +113,12 @@ section {
   }
 
   .hero-layout {
-    @apply relative z-10 xl:mt-20 mt-32 md:h-dvh h-[80vh] flex xl:items-center items-start justify-center;
+    @apply relative z-10 w-full min-h-dvh pt-28 md:pt-36 xl:pt-24 pb-10 px-5 md:px-20
+      flex flex-col xl:flex-row items-center justify-center gap-6 xl:gap-4;
   }
 
   .hero-text {
-    @apply flex flex-col justify-center md:text-[60px] text-[30px] font-semibold relative z-10 pointer-events-none;
+    @apply flex flex-col justify-center text-[30px] md:text-[56px] xl:text-[52px] 2xl:text-[62px] font-semibold relative z-10 pointer-events-none;
     img {
       @apply size-8 md:size-10 object-contain;
     }
@@ -125,12 +127,16 @@ section {
     }
   }
 
+  .hero-content {
+    @apply w-full xl:w-[52%] xl:shrink-0 flex flex-col gap-7 relative z-10;
+  }
+
   .hero-badge {
     @apply bg-black-200 py-2 px-4 rounded-full w-fit text-sm md:text-base text-nowrap transition-colors duration-300;
   }
 
   .hero-3d-layout {
-    @apply xl:w-[70%] w-full h-full min-h-[50vh] absolute xl:-top-20 top-24 xl:-right-20 right-0;
+    @apply relative w-full xl:flex-1 h-[42vh] md:h-[55vh] xl:h-[78vh] min-h-[300px];
   }
 
   .hero-3d-placeholder {
@@ -179,11 +185,16 @@ section {
       }
     }
 
+    .actions {
+      @apply flex items-center gap-3 shrink-0;
+    }
+
     .contact-btn {
       @apply flex;
 
       .inner {
-        @apply px-5 py-2 rounded-lg bg-white text-black group-hover:bg-black-50 transition-colors duration-300;
+        @apply h-10 px-5 flex items-center rounded-full border border-transparent bg-white text-black text-sm md:text-base font-medium
+          transition-all duration-300 group-hover:bg-black-50 group-hover:border-white/20 group-hover:-translate-y-0.5;
 
         span {
           @apply group-hover:text-white transition-colors duration-300;
@@ -246,7 +257,7 @@ section {
   }
 
   .cta-button {
-    @apply px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
+    @apply w-full h-full min-h-12 px-4 py-4 rounded-lg bg-black-200 flex justify-center items-center relative cursor-pointer overflow-hidden;
 
     .bg-circle {
       @apply absolute -right-10 origin-center top-1/2 -translate-y-1/2 
@@ -333,11 +344,11 @@ section {
 
     input,
     textarea {
-      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md border border-black-50 transition-colors duration-300;
+      @apply w-full px-4 py-4 md:text-base text-sm placeholder:text-blue-50 bg-blue-100 rounded-md border border-black-50 transition-colors duration-300 outline-none focus:border-sky-500 focus:ring-2 focus:ring-sky-500/20;
     }
 
-    a, button[type="submit"] {
-      @apply w-full py-4 bg-white text-black font-semibold rounded-md flex justify-center items-center gap-2 border border-black-50 transition-colors duration-300;
+    button[type="submit"] {
+      @apply w-full p-0 bg-transparent border-0 rounded-lg cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed;
 
       img {
         @apply inline-block;
@@ -370,30 +381,161 @@ section {
   }
 }
 
-/* Penyesuaian khusus elemen tombol di Mode Terang */
-html.light .navbar .contact-btn .inner {
-  background-color: #0f172a;
-  color: #ffffff;
+/* =========================================================
+   KOMPONEN BERSAMA
+   ========================================================= */
+.theme-toggle {
+  @apply h-10 flex items-center gap-2 px-3.5 rounded-full border backdrop-blur-md shadow-sm cursor-pointer transition-colors duration-300
+    bg-slate-900/80 border-slate-700 text-slate-100 hover:bg-slate-800;
 }
+
+/* Logo perusahaan di kartu experience */
+.exp-logo {
+  @apply inline-flex items-center transition-colors duration-300;
+}
+.exp-label {
+  color: #839cb5;
+}
+
+/* Wadah canvas 3D di section contact */
+.contact-3d {
+  background-color: #cd7c2e;
+  transition: background 0.4s ease;
+}
+
+/* =========================================================
+   PENYESUAIAN MODE TERANG
+   ========================================================= */
+html.light ::selection {
+  background: #c7d2fe;
+  color: #1e1b4b;
+}
+
+/* Latar halaman: gradasi lembut agar tidak "datar" & menyatu dengan konten 3D */
+html.light body {
+  background-image:
+    radial-gradient(60rem 40rem at 90% -10%, rgba(99, 102, 241, 0.10), transparent 60%),
+    radial-gradient(50rem 35rem at -10% 35%, rgba(56, 189, 248, 0.10), transparent 60%),
+    radial-gradient(45rem 30rem at 100% 85%, rgba(168, 85, 247, 0.06), transparent 60%);
+  background-attachment: fixed;
+}
+
+/* Navbar & toggle */
+html.light .theme-toggle {
+  @apply bg-white/90 border-slate-200 text-slate-700 hover:bg-slate-50;
+}
+html.light .navbar.scrolled {
+  box-shadow: 0 4px 24px -12px rgba(30, 41, 59, 0.18);
+}
+html.light .navbar .contact-btn .inner {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  box-shadow: 0 6px 16px -8px rgba(79, 70, 229, 0.6);
+}
+/* Hover: berubah jadi tombol "outline" putih + teks indigo, sedikit terangkat */
 html.light .navbar .contact-btn:hover .inner {
-  background-color: #334155;
+  background-color: #ffffff;
+  border-color: var(--accent);
+  box-shadow: 0 10px 22px -10px rgba(79, 70, 229, 0.55);
+}
+html.light .navbar .contact-btn:hover .inner span {
+  color: var(--accent);
+}
+html.light .navbar nav.desktop li:hover {
+  color: var(--accent);
+}
+
+/* Badge judul section */
+html.light .hero-badge {
+  background-color: #eef2ff;
+  color: #3730a3;
+  border: 1px solid #e0e7ff;
+}
+
+/* Ikon pada teks slider hero berwarna gelap, jadi beri latar terang */
+html.light .hero-text .slide img {
+  background-color: #e0e7ff;
+}
+
+/* Kartu: putih dengan bayangan halus berlapis */
+html.light .card-border {
+  box-shadow:
+    0 1px 2px rgba(30, 41, 59, 0.04),
+    0 12px 32px -16px rgba(30, 41, 59, 0.16);
+}
+html.light .tech-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+html.light .tech-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 1px 2px rgba(30, 41, 59, 0.04),
+    0 24px 40px -20px rgba(79, 70, 229, 0.30);
+}
+
+/* Gambar project di showcase */
+html.light .app-showcase .image-wrapper {
+  box-shadow: 0 20px 40px -24px rgba(30, 41, 59, 0.35);
+}
+
+/* Experience: logo berteks putih -> beri badge gelap agar teks terbaca */
+html.light .exp-logo {
+  @apply rounded-xl px-4 py-3;
+  background-color: #1e293b;
+}
+html.light .exp-label {
+  color: var(--accent);
+}
+html.light .timeline-logo {
+  box-shadow: 0 0 0 4px #ffffff, 0 6px 16px -6px rgba(30, 41, 59, 0.25);
+}
+
+/* Contact: canvas biru lembut (senada palet), bukan oranye */
+html.light .contact-3d {
+  background: linear-gradient(180deg, #eef2ff 0%, #dbe4fb 100%);
+  border: 1px solid var(--color-black-50);
+}
+
+/* Tombol CTA: latar indigo, panah putih */
+html.light .cta-button {
+  background-color: #eef2ff;
+}
+html.light .cta-button .bg-circle {
+  background-color: var(--accent);
 }
 html.light .cta-button .text {
   color: #ffffff;
 }
 html.light .cta-button:hover .text {
-  color: #0f172a;
+  color: #3730a3;
 }
-html.light .card-border {
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08);
+html.light .cta-button:hover .arrow-wrapper {
+  background-color: var(--accent);
 }
+html.light .cta-button .arrow-wrapper img {
+  filter: invert(1);
+}
+
+/* Input fokus pakai warna aksen */
+html.light form input:focus,
+html.light form textarea:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
 html.light .hero-3d-placeholder {
-  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.25), transparent 55%), linear-gradient(135deg, #f1f5f9, #e2e8f0);
-  border-color: #cbd5e1;
+  background: radial-gradient(circle at top, rgba(99, 102, 241, 0.18), transparent 55%), linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  border-color: #e3e8f0;
 }
-/* Jika ikon sosial media atau arrow berwarna putih (PNG/SVG putih), balik warnanya di mode terang */
+
+/* Ikon sosial media berwarna putih -> balik warnanya di mode terang */
 html.light .footer .socials .icon img {
-  filter: invert(1) brightness(0.2);
+  filter: invert(1) brightness(0.3);
+}
+html.light .footer .socials .icon:hover {
+  background-color: #eef2ff;
+  border-color: #c7d2fe;
 }
 
 /* Hero text slider starts */
@@ -514,4 +656,114 @@ html.light .footer .socials .icon img {
 
 .card:hover::before {
   opacity: 1;
+}
+
+/* =========================================================
+   LOADING SCREEN OVERLAY (Sinkron dengan 3D Asset Loader)
+   ========================================================= */
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  backdrop-filter: blur(16px);
+  opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s ease;
+}
+
+.loader-overlay.loader-fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.5rem 3rem;
+  border-radius: 1.5rem;
+  background-color: var(--color-black-100);
+  border: 1px solid var(--color-black-50);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+}
+
+html.light .loader-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 1px 2px rgba(30, 41, 59, 0.04),
+    0 24px 48px -16px rgba(79, 70, 229, 0.18);
+}
+
+.loader-spinner-wrap {
+  position: relative;
+  width: 5.5rem;
+  height: 5.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loader-ring-outer {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 3px solid rgba(148, 163, 184, 0.2);
+  border-top-color: #38bdf8;
+  border-right-color: #6366f1;
+  animation: loaderSpin 1.15s linear infinite;
+}
+
+.loader-ring-inner {
+  position: absolute;
+  inset: 0.55rem;
+  border-radius: 9999px;
+  border: 2px dashed rgba(99, 102, 241, 0.35);
+  animation: loaderSpinReverse 2.4s linear infinite;
+}
+
+.loader-percent {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.loader-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+.loader-subtitle {
+  font-size: 0.875rem;
+  color: var(--color-white-50);
+}
+
+.loader-bar-track {
+  width: 14rem;
+  height: 0.375rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  background-color: var(--color-black-200);
+}
+
+.loader-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #38bdf8 0%, #6366f1 100%);
+  transition: width 0.2s ease-out;
+}
+
+@keyframes loaderSpin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes loaderSpinReverse {
+  to { transform: rotate(-360deg); }
 }

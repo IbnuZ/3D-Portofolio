@@ -5,6 +5,13 @@
     <link rel="icon" type="image/svg+xml" href="images/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>nsrlyx &mdash;&mdash; Portofolio</title>
+    <!-- Terapkan tema sebelum React dimuat agar tidak ada "flash" warna saat refresh -->
+    <script>
+      (function () {
+        var t = localStorage.getItem("portfolio-theme") || "dark";
+        document.documentElement.classList.add(t);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

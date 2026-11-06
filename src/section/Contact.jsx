@@ -47,7 +47,7 @@ const Contact = () => {
         />
         <div className="grid-12-cols mt-16">
           <div className="xl:col-span-5">
-            <div className="flex-center card-border rounded-xl px-5">
+            <div className="flex-center card-border rounded-xl p-5 md:p-10">
               <form
                 ref={formRef}
                 onSubmit={handleSubmit}
@@ -92,7 +92,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle"/>
                     <p className="text">
@@ -107,7 +107,7 @@ const Contact = () => {
             </div>
           </div>
           <div className="xl:col-span-7 min-h-96">
-            <div className="bg-[#cd7c2e] w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
+            <div className="contact-3d w-full h-full hover:cursor-grab rounded-3xl overflow-hidden">
               <ContactExperience />
             </div>
           </div>

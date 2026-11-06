@@ -1,24 +1,14 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { Room } from "./Room";
 import HeroLights from "./HeroLights";
 import Particles from "./Particles";
-import SmartCanvas from '../SmartCanvas';
+import SmartCanvas from "../SmartCanvas";
 
 const HeroExperience = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
   const isTablet = useMediaQuery({ query: "(max-width: 1024px)" });
-  const [isReady, setIsReady] = useState(false);
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => setIsReady(true), 250);
-    return () => window.clearTimeout(timer);
-  }, []);
-
-  if (!isReady) {
-    return <div className="hero-3d-placeholder" />;
-  }
 
   return (
     <SmartCanvas

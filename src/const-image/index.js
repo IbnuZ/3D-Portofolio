@@ -112,35 +112,32 @@ const techStackImgs = [
   },
 ];
 
+// Ukuran logo dinormalisasi otomatis di TechIcon (opsional: size sebagai pengali)
 const techStackIcons = [
   {
     name: "React Developer",
     modelPath: "/models/react_logo-transformed.glb",
-    scale: 1,
     rotation: [0, 0, 0],
   },
   {
     name: "Flutter Developer",
     modelPath: "/models/flutter.glb",
-    scale: 30,
     rotation: [0, 0, 0],
   },
   {
     name: "Backend Developer",
     modelPath: "/models/node-transformed.glb",
-    scale: 5,
     rotation: [0, -Math.PI / 2, 0],
   },
   {
     name: "Interactive Developer",
     modelPath: "/models/three.js-transformed.glb",
-    scale: 0.05,
+    themeColor: true, // warna logo mengikuti tema
     rotation: [0, 0, 0],
   },
   {
     name: "Git & Collaboration",
     modelPath: "/models/git-svg-transformed.glb",
-    scale: 0.05,
     rotation: [0, -Math.PI / 4, 0],
   },
 ];
